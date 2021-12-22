@@ -1,44 +1,56 @@
 <div class="sidebar-container" style="position: absolute;" >
     <div class="sidebar-logo">
-      SWE Project
+      Project Name
     </div>
-    <ul class="sidebar-navigation">
+    <ul class="sidebar-navigation" *ngIf="isAuthentication(); else noAuthentication">
       <li class="header">Navigation</li>
       <li>
-        <a [routerLink]="['/Home']">
-          <i class="fa fa-home" aria-hidden="true"></i> Homepage
+        <a routerLink="/userFavBooks">
+          <i class="fa fa-home" aria-hidden="true"></i> Favori Kitaplarım
         </a>
       </li>
-      
-      <!--
       <li>
+
         <a href="#">
-         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+          <i class="fa fa-tachometer" aria-hidden="true"></i> Okuduğum Kitaplar
         </a>
       </li>
-      --> 
-      <li class="header">User Menu</li>
-<!--
-  ADD THIS IF FRIENDS FEATURE IS ADDED
+      <li class="header">Another Menu</li>
       <li>
         <a href="#">
           <i class="fa fa-users" aria-hidden="true"></i> Friends
         </a>
       </li>
-    -->
-    
       <li>
         <a href="#">
           <i class="fa fa-cog" aria-hidden="true"></i> Settings
         </a>
       </li>
-
       <li>
         <a href="#">
           <i class="fa fa-info-circle" aria-hidden="true"></i> Information
         </a>
-      </li>     
+      </li>
     </ul>
+    <ng-template #noAuthentication>
+      <ul class="sidebar-navigation">
+        <li>
+          <a href="#">
+            <i class="fa fa-users" aria-hidden="true"></i> Friends
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-cog" aria-hidden="true"></i> Settings
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+          </a>
+        </li>
+      </ul>
+    </ng-template>
   </div>
   
   <div class="content-container">
